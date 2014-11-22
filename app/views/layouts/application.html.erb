@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tweeter</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        Tweeter
+      </a>
+      <% if current_user %>
+        <p class="navbar-text navbar-right">Signed in as <%= current_user.name %></p>
+      <% end %>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>
